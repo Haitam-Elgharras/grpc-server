@@ -1675,16 +1675,16 @@ public final class Bank {
       "\n\014currencyFrom\030\001 \001(\t\022\022\n\ncurrencyTo\030\002 \001(\t" +
       "\022\016\n\006amount\030\003 \001(\001\"c\n\027ConvertCurrencyRespo" +
       "nse\022\024\n\014currencyFrom\030\001 \001(\t\022\022\n\ncurrencyTo\030" +
-      "\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\016\n\006result\030\004 \001(\0012\262\002" +
+      "\002 \001(\t\022\016\n\006amount\030\003 \001(\001\022\016\n\006result\030\004 \001(\0012\261\002" +
       "\n\013BankService\022<\n\007convert\022\027.ConvertCurren" +
-      "cyRequest\032\030.ConvertCurrencyResponse\022P\n\030g" +
-      "etCurrentCurrencyStream\022\030.ConvertCurrenc" +
-      "yResponse\032\030.ConvertCurrencyResponse0\001\022F\n" +
-      "\rperformStream\022\027.ConvertCurrencyRequest\032" +
-      "\030.ConvertCurrencyResponse(\0010\001\022K\n\022fullCur" +
-      "rencyStream\022\027.ConvertCurrencyRequest\032\030.C" +
-      "onvertCurrencyResponse(\0010\001B\017\n\rma.grpc.st" +
-      "ubsb\006proto3"
+      "cyRequest\032\030.ConvertCurrencyResponse\022O\n\030g" +
+      "etCurrentCurrencyStream\022\027.ConvertCurrenc" +
+      "yRequest\032\030.ConvertCurrencyResponse0\001\022F\n\r" +
+      "performStream\022\027.ConvertCurrencyRequest\032\030" +
+      ".ConvertCurrencyResponse(\0010\001\022K\n\022fullCurr" +
+      "encyStream\022\027.ConvertCurrencyRequest\032\030.Co" +
+      "nvertCurrencyResponse(\0010\001B\017\n\rma.grpc.stu" +
+      "bsb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

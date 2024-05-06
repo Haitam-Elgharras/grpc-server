@@ -4,7 +4,7 @@ option java_package = "ma.grpc.stubs";
 // to implement the service we need to do the compilation protocol buffer
 service BankService {
     rpc convert(ConvertCurrencyRequest) returns (ConvertCurrencyResponse); // unary model
-    rpc getCurrentCurrencyStream(ConvertCurrencyResponse) returns (stream ConvertCurrencyResponse); // server streaming model
+    rpc getCurrentCurrencyStream(ConvertCurrencyRequest) returns (stream ConvertCurrencyResponse); // server streaming model
     rpc performStream(stream ConvertCurrencyRequest) returns (stream ConvertCurrencyResponse); // client streaming model
     rpc fullCurrencyStream(stream ConvertCurrencyRequest) returns (stream ConvertCurrencyResponse); // bidirectional streaming model
 }
