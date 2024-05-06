@@ -56,7 +56,34 @@ public class BankGrpcService extends BankServiceGrpc.BankServiceImplBase {
 
     @Override
     public StreamObserver<Bank.ConvertCurrencyRequest> performStream(StreamObserver<Bank.ConvertCurrencyResponse> responseObserver) {
-        return super.performStream(responseObserver);
+        return new StreamObserver<Bank.ConvertCurrencyRequest>() {
+            double sum = 0;
+            @Override
+            public void onNext(Bank.ConvertCurrencyRequest convertCurrencyRequest) {
+                // each time the client sends an item, calculate the sum
+                sum += convertCurrencyRequest.getAmount();
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+
+            }
+
+            @Override
+            public void onCompleted() {
+                // send the sum to the client
+                Bank.ConvertCurrencyResponse response = Bank.ConvertCurrencyResponse.newBuilder()
+                        .setResult(sum)
+                        .build();
+
+                responseObserver.onNext(response);
+
+                // on completed means that the server has finished sending data even the server is sending just one item
+                responseObserver.onCompleted();
+
+            }
+        };
+
     }
 
     @Override
